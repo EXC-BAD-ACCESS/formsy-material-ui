@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withFormsy } from 'formsy-react'
-import { RadioButtonGroup, RadioButton } from 'material-ui/RadioButton'
+import { RadioGroup, Radio } from 'material-ui/Radio'
 import { setMuiComponentAndMaybeFocus } from './utils'
 
 class FormsyRadioGroup extends React.Component {
@@ -38,7 +38,7 @@ class FormsyRadioGroup extends React.Component {
         validationErrors, // eslint-disable-line no-unused-vars
         ...rest } = radio.props;
 
-      return React.createElement(RadioButton, rest);
+      return React.createElement(Radio, rest);
     });
 
     // For backward compatibility or for
@@ -50,7 +50,7 @@ class FormsyRadioGroup extends React.Component {
     }
 
     return (
-      <RadioButtonGroup
+      <RadioGroup
         disabled={this.props.isFormDisabled()}
         {...rest}
         ref={this.setMuiComponentAndMaybeFocus}
@@ -59,7 +59,7 @@ class FormsyRadioGroup extends React.Component {
         defaultSelected={value}
       >
         {children}
-      </RadioButtonGroup>
+      </RadioGroup>
     );
   }
 }

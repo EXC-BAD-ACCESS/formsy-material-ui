@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withFormsy } from 'formsy-react'
-import SelectField from 'material-ui/SelectField'
+import Select from 'material-ui/Select'
 import { setMuiComponentAndMaybeFocus } from './utils'
 
 class FormsySelect extends React.Component {
@@ -45,7 +45,7 @@ class FormsySelect extends React.Component {
     const value = this.state.hasChanged ? this.props.getValue() : valueProp;
 
     return (
-      <SelectField
+      <Select
         disabled={this.props.isFormDisabled()}
         errorText={errorText}
         onChange={this.handleChange}
@@ -54,7 +54,7 @@ class FormsySelect extends React.Component {
         {...rest}
       >
         {this.props.children}
-      </SelectField>
+      </Select>
     );
   }
 }

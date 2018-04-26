@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import keycode from 'keycode';
 import {withFormsy} from 'formsy-react';
 import TextField from 'material-ui/TextField';
-import { setMuiComponentAndMaybeFocus, debounce } from './utils';
+import { debounce } from './utils';
 
 class FormsyText extends React.Component {
   constructor(props) {
@@ -14,8 +14,6 @@ class FormsyText extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
     this.convertValue = this.convertValue.bind(this)
-
-    this.setMuiComponentAndMaybeFocus = setMuiComponentAndMaybeFocus.bind(this)
 
     const value = this.controlledValue();
     this.state = {
@@ -103,6 +101,7 @@ class FormsyText extends React.Component {
     const {
       defaultValue, // eslint-disable-line no-unused-vars
       convertValue, // eslint-disable-line no-unused-vars
+      endAdornment,
       getErrorMessage,
       getErrorMessages,
       getValue,
@@ -120,6 +119,7 @@ class FormsyText extends React.Component {
       setValue,
       showError,
       showRequired,
+      startAdornment,
       underlineFocusStyle,
       underlineStyle,
       updateImmediately, // eslint-disable-line no-unused-vars
@@ -137,14 +137,19 @@ class FormsyText extends React.Component {
       <TextField
         disabled={this.props.isFormDisabled()}
         {...rest}
-        errorText={errorText}
+        error={errorText != null && errorText.length > 0}
+        helperText={errorText}
         onBlur={this.handleBlur}
         onChange={this.handleChange}
         onKeyDown={this.handleKeyDown}
-        ref={this.setMuiComponentAndMaybeFocus}
         value={this.state.value}
-        underlineStyle={this.state.isValid ? { borderColor: validationColor } : underlineStyle}
-        underlineFocusStyle={this.state.isValid ? { borderColor: validationColor } : underlineFocusStyle}
+        FormHelperTextProps={{
+          error: errorText != null && errorText.length > 0,
+        }}
+        InputProps={{
+          startAdornment: startAdornment,
+          endAdornment: endAdornment,
+        }}
       />
     );
   }

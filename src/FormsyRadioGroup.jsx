@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withFormsy } from 'formsy-react'
-import { RadioGroup, Radio } from 'material-ui/Radio'
+import { RadioGroup, Radio } from '@material-ui/core/Radio'
 import { setMuiComponentAndMaybeFocus } from './utils'
 
 class FormsyRadioGroup extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withFormsy } from 'formsy-react'
-import Select from 'material-ui/Select'
+import Select from '@material-ui/core/Select'
 import { setMuiComponentAndMaybeFocus } from './utils'
 
 class FormsySelect extends React.Component {

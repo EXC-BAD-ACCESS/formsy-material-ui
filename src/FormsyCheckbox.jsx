@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withFormsy } from 'formsy-react';
-import Checkbox from 'material-ui/Checkbox';
+import Checkbox from '@material-ui/core/Checkbox';
 import { setMuiComponentAndMaybeFocus } from './utils';
 
 class FormsyCheckbox extends React.Component {

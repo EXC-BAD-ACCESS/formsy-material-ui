@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import keycode from 'keycode';
 import {withFormsy} from 'formsy-react';
-import TextField from 'material-ui/TextField';
+import TextField from '@material-ui/core/TextField';
 import { debounce } from './utils';
 
 class FormsyText extends React.Component {
